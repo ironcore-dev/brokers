@@ -1,0 +1,21 @@
+version = 1
+SPDX-PackageName = "brokers"
+SPDX-PackageSupplier = "IronCore authors <ospo@sap.com>"
+SPDX-PackageDownloadLocation = "https://github.com/ironcore-dev/brokers"
+
+[[annotations]]
+path = [
+    ".github/**",
+    ".gitignore",
+    ".golangci.yml",
+    "config/**",
+    "Dockerfile",
+    "Makefile",
+    "go.mod",
+    "go.sum",
+    "README.md",
+    "REUSE.toml",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "SAP SE or an SAP affiliate company and IronCore contributors"
+SPDX-License-Identifier = "Apache-2.0"
