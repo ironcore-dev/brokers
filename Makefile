@@ -7,12 +7,12 @@ BUCKETBROKER_IMG ?= bucketbroker:latest
 LDFLAGS ?= -s -w
 VERSION=$(shell git describe --tags --abbrev=0)
 COMMIT=$(shell git log -n1 --format="%h")
-MACHINEBROKER_VERSION = github.com/ironcore-dev/brokers/broker/machinebroker/version.Version
-MACHINEBROKER_COMMIT = github.com/ironcore-dev/brokers/broker/machinebroker/version.Commit
-VOLUMEBROKER_VERSION = github.com/ironcore-dev/brokers/broker/volumebroker/version.Version
-VOLUMEBROKER_COMMIT = github.com/ironcore-dev/brokers/broker/volumebroker/version.Commit
-BUCKETBROKER_VERSION = github.com/ironcore-dev/brokers/broker/bucketbroker/version.Version
-BUCKETBROKER_COMMIT = github.com/ironcore-dev/brokers/broker/bucketbroker/version.Commit
+MACHINEBROKER_VERSION = github.com/ironcore-dev/brokers/machinebroker/version.Version
+MACHINEBROKER_COMMIT = github.com/ironcore-dev/brokers/machinebroker/version.Commit
+VOLUMEBROKER_VERSION = github.com/ironcore-dev/brokers/volumebroker/version.Version
+VOLUMEBROKER_COMMIT = github.com/ironcore-dev/brokers/volumebroker/version.Commit
+BUCKETBROKER_VERSION = github.com/ironcore-dev/brokers/bucketbroker/version.Version
+BUCKETBROKER_COMMIT = github.com/ironcore-dev/brokers/bucketbroker/version.Commit
 
 # Get the currently used golang install path (in GOPATH/bin, unless GOBIN is set)
 ifeq (,$(shell go env GOBIN))
@@ -83,9 +83,9 @@ test-only: envtest ## Run *only* the tests - no generation, linting etc.
 
 .PHONY: build
 build: fmt vet ## Build broker binaries.
-	go build -ldflags="${LDFLAGS} -X $(MACHINEBROKER_VERSION)=$(VERSION) -X $(MACHINEBROKER_COMMIT)=$(COMMIT)" -o bin/machinebroker ./broker/machinebroker/cmd/machinebroker
-	go build -ldflags="${LDFLAGS} -X $(VOLUMEBROKER_VERSION)=$(VERSION) -X $(VOLUMEBROKER_COMMIT)=$(COMMIT)" -o bin/volumebroker ./broker/volumebroker/cmd/volumebroker
-	go build -ldflags="${LDFLAGS} -X $(BUCKETBROKER_VERSION)=$(VERSION) -X $(BUCKETBROKER_COMMIT)=$(COMMIT)" -o bin/bucketbroker ./broker/bucketbroker/cmd/bucketbroker
+	go build -ldflags="${LDFLAGS} -X $(MACHINEBROKER_VERSION)=$(VERSION) -X $(MACHINEBROKER_COMMIT)=$(COMMIT)" -o bin/machinebroker ./machinebroker/cmd/machinebroker
+	go build -ldflags="${LDFLAGS} -X $(VOLUMEBROKER_VERSION)=$(VERSION) -X $(VOLUMEBROKER_COMMIT)=$(COMMIT)" -o bin/volumebroker ./volumebroker/cmd/volumebroker
+	go build -ldflags="${LDFLAGS} -X $(BUCKETBROKER_VERSION)=$(VERSION) -X $(BUCKETBROKER_COMMIT)=$(COMMIT)" -o bin/bucketbroker ./bucketbroker/cmd/bucketbroker
 
 .PHONY: docker-build
 docker-build: docker-build-machinebroker docker-build-volumebroker docker-build-bucketbroker ## Build docker images for all brokers.

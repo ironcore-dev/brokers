@@ -7,11 +7,11 @@
 This repository contains the [IronCore](https://github.com/ironcore-dev/ironcore) brokers — the IRI (IronCore Runtime
 Interface) broker implementations that sit between the poollets and the underlying infrastructure providers:
 
-- **machinebroker** — serves the machine IRI (`broker/machinebroker`)
-- **volumebroker** — serves the volume IRI (`broker/volumebroker`)
-- **bucketbroker** — serves the bucket IRI (`broker/bucketbroker`)
+- **machinebroker** — serves the machine IRI (`machinebroker`)
+- **volumebroker** — serves the volume IRI (`volumebroker`)
+- **bucketbroker** — serves the bucket IRI (`bucketbroker`)
 
-Shared broker infrastructure lives under `broker/common`.
+Shared broker infrastructure lives under `common`.
 
 ## Building
 

@@ -10,7 +10,10 @@ COPY go.sum go.sum
 RUN go mod download
 
 # Copy the go source
-COPY broker/ broker/
+COPY bucketbroker/ bucketbroker/
+COPY common/ common/
+COPY machinebroker/ machinebroker/
+COPY volumebroker/ volumebroker/
 
 ARG TARGETOS
 ARG TARGETARCH
@@ -22,19 +25,19 @@ FROM builder AS machinebroker-builder
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH GO111MODULE=on go build -ldflags="${LDFLAGS}" -a -o bin/machinebroker ./broker/machinebroker/cmd/machinebroker/main.go
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH GO111MODULE=on go build -ldflags="${LDFLAGS}" -a -o bin/machinebroker ./machinebroker/cmd/machinebroker/main.go
 
 FROM builder AS volumebroker-builder
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH GO111MODULE=on go build -ldflags="${LDFLAGS}" -a -o bin/volumebroker ./broker/volumebroker/cmd/volumebroker/main.go
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH GO111MODULE=on go build -ldflags="${LDFLAGS}" -a -o bin/volumebroker ./volumebroker/cmd/volumebroker/main.go
 
 FROM builder AS bucketbroker-builder
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH GO111MODULE=on go build -ldflags="${LDFLAGS}" -a -o bin/bucketbroker ./broker/bucketbroker/cmd/bucketbroker/main.go
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH GO111MODULE=on go build -ldflags="${LDFLAGS}" -a -o bin/bucketbroker ./bucketbroker/cmd/bucketbroker/main.go
 
 # TODO: Switch to distroless as soon as ephemeral debug containers are more broadly available.
 FROM debian:bullseye-slim AS machinebroker

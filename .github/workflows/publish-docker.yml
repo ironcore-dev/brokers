@@ -23,11 +23,11 @@ jobs:
     strategy:
       matrix:
         image:
-        - name: ironcore-machinebroker
+        - name: machinebroker
           target: machinebroker
-        - name: ironcore-volumebroker
+        - name: volumebroker
           target: volumebroker
-        - name: ironcore-bucketbroker
+        - name: bucketbroker
           target: bucketbroker
     permissions:
       contents: read
