@@ -7,7 +7,7 @@ require (
 	github.com/go-chi/chi/v5 v5.3.2
 	github.com/go-logr/logr v1.4.4
 	github.com/ironcore-dev/controller-utils v0.14.0
-	github.com/ironcore-dev/ironcore v0.6.1
+	github.com/ironcore-dev/ironcore v0.6.2-0.20260917120745-4f5b84d63efc
 	github.com/onsi/ginkgo/v2 v2.32.2
 	github.com/onsi/gomega v1.43.0
 	github.com/spf13/cobra v1.10.2
@@ -112,5 +112,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.3 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
-
-replace github.com/ironcore-dev/ironcore => github.com/lukasfrank/ironcore v0.0.0-20260916114950-25b50d7739ea

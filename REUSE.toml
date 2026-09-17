@@ -15,7 +15,8 @@ path = [
     "go.sum",
     "README.md",
     "REUSE.toml",
-     "hack/**"
+    "CODEOWNERS",
+    "hack/**"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "SAP SE or an SAP affiliate company and IronCore contributors"
