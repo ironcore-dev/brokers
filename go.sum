@@ -97,6 +97,8 @@ github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
 github.com/ironcore-dev/controller-utils v0.14.0 h1:ZRKcTKHxj8xNJDX1t225YoCTykw7rOR1wingeMm424k=
 github.com/ironcore-dev/controller-utils v0.14.0/go.mod h1:r0ANgOsXV7Xo+V8z93frNJMnZdE1ZWc9j2djOKWEigA=
+github.com/ironcore-dev/ironcore v0.6.2-0.20260917120745-4f5b84d63efc h1:ZRPTgjAdCccPFghuIMREc2/Gysyug8wmCvzLQx87z9Q=
+github.com/ironcore-dev/ironcore v0.6.2-0.20260917120745-4f5b84d63efc/go.mod h1:SHbnuz6HXY7XAAUF5ccjBu5H0P1GlMzUyXLQpb74lFY=
 github.com/joshdk/go-junit v1.0.0 h1:S86cUKIdwBHWwA6xCmFlf3RTLfVXYQfvanM5Uh+K6GE=
 github.com/joshdk/go-junit v1.0.0/go.mod h1:TiiV0PqkaNfFXjEiyjWM3XXrhVyCa1K4Zfga6W52ung=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
@@ -109,8 +111,6 @@ github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
 github.com/kr/text v0.2.0/go.mod h1:eLer722TekiGuMkidMxC/pM04lWEeraHUUmBw8l2grE=
 github.com/kylelemons/godebug v1.1.0 h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0SNc=
 github.com/kylelemons/godebug v1.1.0/go.mod h1:9/0rRGxNHcop5bhtWyNeEfOS8JIWk580+fNqagV/RAw=
-github.com/lukasfrank/ironcore v0.0.0-20260916114950-25b50d7739ea h1:DR6aBIGbPj8vtj4tqvzjoyF7cnG7ef9qdwfx7kuZ7Hc=
-github.com/lukasfrank/ironcore v0.0.0-20260916114950-25b50d7739ea/go.mod h1:Zg0QHQ4UEMWw8B55R2Fkre/3lTRQJsamnixMMSa86Vk=
 github.com/maruel/natural v1.1.1 h1:Hja7XhhmvEFhcByqDoHz9QZbkWey+COd9xWfCfn1ioo=
 github.com/maruel/natural v1.1.1/go.mod h1:v+Rfd79xlw1AgVBjbO0BEQmptqb5HvL/k9GRHB7ZKEg=
 github.com/mfridman/tparse v0.18.0 h1:wh6dzOKaIwkUGyKgOntDW4liXSo37qg5AXbIhkMV3vE=
