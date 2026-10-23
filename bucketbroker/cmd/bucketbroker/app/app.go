@@ -15,6 +15,8 @@ import (
 
 	bucketbrokerconfig "github.com/ironcore-dev/brokers/bucketbroker/client/config"
 	"github.com/ironcore-dev/brokers/bucketbroker/server"
+	configutils "github.com/ironcore-dev/controller-utils/configutils"
+
 	"github.com/ironcore-dev/brokers/common"
 	iri "github.com/ironcore-dev/ironcore/iri/apis/bucket/v1alpha1"
 	"github.com/ironcore-dev/ironcore/utils/client/config"
@@ -83,7 +85,16 @@ func Run(ctx context.Context, opts Options) error {
 		return fmt.Errorf("error creating new getter: %w", err)
 	}
 
-	cfg, err := getter.GetConfig(ctx, &opts.GetConfigOptions)
+	getConfigOptions := &configutils.GetConfigOptions{
+		Context:              opts.GetConfigOptions.Context,
+		EgressSelectorConfig: opts.GetConfigOptions.EgressSelectorConfig,
+		QPS:                  opts.GetConfigOptions.QPS,
+		Burst:                opts.GetConfigOptions.Burst,
+	}
+	if opts.GetConfigOptions.Kubeconfig != "" {
+		getConfigOptions.Kubeconfig = &opts.GetConfigOptions.Kubeconfig
+	}
+	cfg, err := getter.GetConfig(ctx, getConfigOptions)
 	if err != nil {
 		return fmt.Errorf("error getting config: %w", err)
 	}
